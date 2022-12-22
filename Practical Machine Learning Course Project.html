@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kyriaki Roumpi" />
+  <title>Practical Machine Learning Course Project</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Practical Machine Learning Course Project</h1>
+<p class="author">Kyriaki Roumpi</p>
+<p class="date"><code>r Sys.Date()</code></p>
+</header>
+<h2 id="review-criteria">Review Criteria</h2>
+<h3 id="what-you-should-submit">What you should submit</h3>
+<p>The goal of your project is to predict the manner in which they did the exercise. This is the “classe” variable in the training set. You may use any of the other variables to predict with. You should create a report describing how you built your model, how you used cross validation, what you think the expected out of sample error is, and why you made the choices you did. You will also use your prediction model to predict 20 different test cases.</p>
+<h4 id="peer-review-portion">Peer Review Portion</h4>
+<p>Your submission for the Peer Review portion should consist of a link to a Github repo with your R markdown and compiled HTML file describing your analysis. Please constrain the text of the writeup to &lt; 2000 words and the number of figures to be less than 5. It will make it easier for the graders if you submit a repo with a gh-pages branch so the HTML page can be viewed online (and you always want to make it easy on graders :-).</p>
+<h4 id="course-project-prediction-quiz-portion">Course Project Prediction Quiz Portion</h4>
+<p>Apply your machine learning algorithm to the 20 test cases available in the test data above and submit your predictions in appropriate format to the Course Project Prediction Quiz for automated grading.</p>
+<h3 id="reproducibility">Reproducibility</h3>
+<p>Due to security concerns with the exchange of R code, your code will not be run during the evaluation by your classmates. Please be sure that if they download the repo, they will be able to view the compiled HTML version of your analysis.</p>
+<h2 id="prediction-assignment-writeup">Prediction Assignment Writeup</h2>
+<h3 id="background">Background</h3>
+<p>Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement – a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website here: http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har (see the section on the Weight Lifting Exercise Dataset).</p>
+<h3 id="data">Data</h3>
+<p>The training data for this project are available here:</p>
+<p>https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</p>
+<p>The test data are available here:</p>
+<p>https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</p>
+<p>The data for this project come from this source: http://web.archive.org/web/20161224072740/http:/groupware.les.inf.puc-rio.br/har. If you use the document you create for this class for any purpose please cite them as they have been very generous in allowing their data to be used for this kind of assignment.</p>
+<h1 id="first-steps">First Steps</h1>
+<p>Step 1: we load or install the packages that we will need for this project.</p>
+<pre class="{r}"><code>library(ggplot2)
+library(barplot3d)
+library(caret)
+library(randomForest)
+library(rpart)
+library(rpart.plot)</code></pre>
+<p>Step 2: we load the data in R.</p>
+<pre class="{r}"><code>datatest &lt;- read.csv(&quot;C:/Users/diken/Έγγραφα/R/pml-testing.csv&quot;)
+datatrain &lt;- read.csv(&quot;C:/Users/diken/Έγγραφα/R/pml-training.csv&quot;)</code></pre>
+<p>Step 3: We check what kind of data we have and if we can rid them of useless information</p>
+<p>Delete columns that have missing values</p>
+<pre class="{r}"><code>datatest &lt;- datatest[,colSums(is.na(datatest)) == 0]
+datatrain &lt;- datatrain[,colSums(is.na(datatrain)) == 0]</code></pre>
+<p>Delete variables that will not be needed</p>
+<pre class="{r}"><code>datatest &lt;- datatest[,-c(1:7)]
+datatrain &lt;- datatrain[,-c(1:7)]</code></pre>
+<p>Step 4: We cross validate our data by using 75% of the original training dataset and 25% of the original testing set.</p>
+<pre class="{r}"><code>datatrain2 &lt;- createDataPartition(y=datatrain$classe, p=0.75, list=FALSE)
+trainTraining &lt;- datatrain[datatrain2, ] 
+testTraining &lt;- datatrain[-datatrain2, ]
+df &lt;- table(trainTraining$classe)</code></pre>
+<p>Step 5: A plot will help us to visualize the frequency of each of the five classes (A to E) included in our data.</p>
+<p><code>{r echo = TRUE} barplot(df, main="Frequency of each classe in trainTraining dataset", xlab="Classe", ylab="Frequency", col=c("darkblue"), beside=TRUE)</code></p>
+<p>As we can see, classe A is the most frequent whereas classe D is the least frequent.</p>
+<h1 id="prediction-model-1-classification-tree">Prediction Model 1: Classification Tree</h1>
+<p><code>{r echo = TRUE} model1 &lt;- rpart(classe ~ ., data=trainTraining, method="class") prediction1 &lt;- predict(model1, trainTraining, type = "class") rpart.plot(model1, main="Classification Tree", extra=102, under=TRUE, faclen=0)</code></p>
+<p><code>{r echo = TRUE} confusionMatrix(prediction1, trainTraining$classe)</code></p>
+<h1 id="prediction-model-2-random-forest">Prediction Model 2: Random Forest</h1>
+<p><code>{r echo = TRUE} model2 &lt;- randomForest(classe ~. , data=trainTraining, method="class") prediction2 &lt;- predict(model2, testTraining, type = "class")</code></p>
+<p><code>{r echo = TRUE} confusionMatrix(prediction2, testTraining$classe)</code></p>
+<h1 id="best-model-option"><em>Best Model Option</em></h1>
+<p>As shown, the Random Forest model gives us an average accuracy of 0.995%, which is the highest accuracy rate of the two models tested. As a result, Random Forest will be our choice for most accurate results.</p>
+<h1 id="final-outcome">Final Outcome</h1>
+<p><code>{r echo = TRUE} predictfinal &lt;- predict(model2, datatest, type="class") predictfinal</code></p>
+</body>
+</html>
