@@ -95,7 +95,7 @@ Step 5: A plot will help us to visualize the frequency of each of the five class
 ```{r}
 barplot(df, main="Frequency of each classe in trainTraining dataset", xlab="Classe", ylab="Frequency", col=c("darkblue"), beside=TRUE)
 ```
-(Barplot image in different file, because of technical problem with R)
+*(BARPLOT IMAGE IS IN DIFFERENT FILE IN REPOSITORY, BECAUSE MY RSTUDIO WOULD STUCK IN THE MIDDLE OF THE KNITTING PROCEDURE)*
 
 As we can see, classe A is the most frequent whereas classe D is the least frequent. 
 
